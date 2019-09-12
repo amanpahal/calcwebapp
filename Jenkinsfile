@@ -21,7 +21,7 @@ node {
    
    stage('Package & Deploy') {
    sh("mvn package")
-	 sh 'curl --upload-file target/calcwebapp.war "http://deployer:deployer@6243cfba.ngrok.io:8081/manager/text/deploy?path=/webcalcdemo&update=true"'
+	 /bin/sh 'curl --upload-file target/calcwebapp.war "http://deployer:deployer@6243cfba.ngrok.io:8081/manager/text/deploy?path=/webcalcdemo&update=true"'
    }
    
 
