@@ -4,7 +4,7 @@ node {
   
   stage('Code Checkout') { 
       // Get some code from a GitHub repository
-      git 'https://github.com/rchidana/calcwebapp.git'
+      git 'https://github.com/amanpahal/calcwebapp.git'
 
    }
    
@@ -21,7 +21,7 @@ node {
    
    stage('Package & Deploy') {
    bat("mvn package")
-	 bat 'curl --upload-file target/calcwebapp.war "http://deployer:deployer@localhost:8081/manager/text/deploy?path=/webcalcdemo&update=true"'
+	 bat 'curl --upload-file target/calcwebapp.war "http://deployer:deployer@6243cfba.ngrok.io:8081/manager/text/deploy?path=/webcalcdemo&update=true"'
    }
    
 
